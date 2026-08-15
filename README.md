@@ -8,9 +8,9 @@ The project takes a raw Steam games dataset through a complete analytics workflo
 
 ## 📌 Project Overview
 
-The goal of this project was not only to visualize the Steam games dataset, but to turn the raw data into a structured analytical report that answers different types of questions about the games.
+The goal of this project was to transform raw Steam game data into a structured analytical report that allows users to move from the **overall Steam landscape**, to **individual game performance**, and finally to **genre and tag-level patterns**.
 
-The dashboard was intentionally divided into three pages, with each page having a different analytical purpose:
+The dashboard was intentionally divided into three pages, with each page answering a different analytical question.
 
 ### 1. Steam Overview
 
@@ -18,16 +18,16 @@ The dashboard was intentionally divided into three pages, with each page having 
 
 This page provides the high-level picture of the dataset, including:
 
-* Number of games
+* Total games
 * Positive review rate
 * Positive reviews
 * Average Metacritic score
 * Average game price
 * Games released over time
-* Game distribution by genre
+* Genre distribution
 * Top games by Peak CCU
 
-The purpose of this page is to give the user a quick understanding of the dataset before moving into deeper analysis.
+The purpose of this page is to give users a quick understanding of the dataset before moving into deeper analysis.
 
 ![Steam Overview](images/steam-overview.png)
 
@@ -50,13 +50,13 @@ It explores:
 * Playtime vs Peak CCU
 * Top games by recommendations
 
-This page also allows the analysis to be explored through filters such as:
+The page also includes filters for:
 
 * Year
 * Genre
 * Price status
 
-The objective is to move from the overall Steam picture into understanding **what separates games in terms of popularity and player engagement**.
+This page moves from the overall dataset into understanding **differences in popularity, pricing, and player engagement between games**.
 
 ![Game Analysis](images/game-analysis.png)
 
@@ -79,7 +79,7 @@ It explores:
 * Genre by price status
 * Most common tags by game count
 
-This page helps identify patterns across genres and tags and provides a broader view of how different categories of games are represented and engaged with on Steam.
+The purpose is to identify patterns across genres and tags and understand how different categories of games are represented and engaged with on Steam.
 
 ![Genres / Tags Analysis](images/genres-tags-analysis.png)
 
@@ -103,7 +103,11 @@ Dashboard Design
 Interactive Analysis
 ```
 
-## 1. Data Cleaning & Transformation
+This workflow was designed to turn the raw dataset into a structured and reusable analytical model rather than building visualizations directly from an unprepared table.
+
+---
+
+## 🧹 Data Cleaning & Transformation
 
 The raw dataset contained game-level information such as:
 
@@ -133,7 +137,7 @@ Key preparation work included:
 
 ![Cleaned Data](images/cleaned-data.png)
 
-> The cleaned data screenshot is included to demonstrate the transformation stage of the project.
+The cleaned data represents the prepared dataset used as the foundation for the analytical model.
 
 ---
 
@@ -148,21 +152,23 @@ The model includes structures such as:
 * `BRIDGE_GAME_GENRS`
 * Dedicated Measures table
 
-The bridge table was used to handle the relationship between games and genres, allowing genre-level analysis without duplicating the game data unnecessarily.
+The bridge table was used to handle the relationship between games and genres, allowing genre-level analysis without unnecessarily duplicating game-level data.
 
 ![Data Model](images/data-model.png)
+
+The data model provides the structure required for the dashboard's calculations, filtering, and genre-level analysis.
 
 ---
 
 # 🧮 DAX & Measures
 
-DAX measures were created to provide reusable calculations throughout the dashboard.
+Reusable DAX measures were created to power the dashboard and allow calculations to respond dynamically to filters and user selections.
 
 Examples include:
 
 * Total Games
 * Positive Review Rate
-* Positive Reviews
+* Total Positive Reviews
 * Average Metacritic Score
 * Average Price
 * Average Playtime Hours
@@ -173,15 +179,17 @@ Examples include:
 * Top Genre
 * Average Games per Genre
 * Total Tags
+* Paid Games
+* Paid Games %
 
-For example, the total number of games is calculated using:
+For example:
 
 ```DAX
 Total Games =
 DISTINCTCOUNT(Dim_Game[app_id])
 ```
 
-Using measures instead of manually calculated values allows the dashboard to respond dynamically to filters and user selections.
+Using measures rather than manually calculated values allows the dashboard to update dynamically when users interact with filters.
 
 ---
 
@@ -228,22 +236,6 @@ The dashboard was designed around practical analytical questions rather than sim
 
 ---
 
-# 💡 Project Focus
-
-The main objective of the project was to demonstrate how raw game data can be transformed into an analytical product that allows users to move through different levels of analysis:
-
-```text
-Dataset Overview
-      ↓
-Game-Level Performance
-      ↓
-Genre & Tag Patterns
-```
-
-Each dashboard page therefore has a distinct role rather than repeating the same KPIs and visualizations.
-
----
-
 # 🛠️ Tools & Technologies
 
 * **Power BI**
@@ -256,53 +248,12 @@ Each dashboard page therefore has a distinct role rather than repeating the same
 
 ---
 
-# 📷 Dashboard Preview
+# 🎯 Final Outcome
 
-### Steam Overview
+The final result is an interactive Power BI report that transforms raw Steam game data into a structured analytical experience.
 
-![Steam Overview](images/steam-overview.png)
-
-The overview page provides a high-level view of the Steam games dataset, including releases over time, genre distribution, reviews, pricing, and game popularity.
-
-### Game Analysis
-
-![Game Analysis](images/game-analysis.png)
-
-The game analysis page focuses on individual game performance, player engagement, pricing, playtime, Peak CCU, recommendations, and free vs paid games.
-
-### Genres / Tags Analysis
-
-![Genres / Tags Analysis](images/genres-tags-analysis.png)
-
-The genres and tags page explores genre-level performance, pricing patterns, Peak CCU, and the most common game tags.
-
----
-
-# 🧩 Data Preparation & Modeling
-
-The project also includes the data preparation and modeling stages used to build the final dashboard.
-
-### Cleaned Data
-
-![Cleaned Data](images/cleaned-data.png)
-
-The cleaned data represents the prepared dataset after the required data cleaning and transformation steps in Power Query.
-
-### Data Model
-
-![Data Model](images/data-model.png)
-
-The Power BI data model shows how the different tables are structured and related to support the dashboard's analysis and DAX measures.
-
-These two stages form the foundation of the final dashboard:
-
-**Cleaned Data → Data Model → DAX Measures → Interactive Dashboards**
-
-
-## 🎯 Final Outcome
-
-The final result is an interactive Power BI report that transforms the Steam games dataset into a structured analytical experience.
-
-The project demonstrates the complete process of taking data from its raw form and turning it into a usable business intelligence solution through:
+The project demonstrates the complete process of turning raw data into a usable business intelligence solution:
 
 **Cleaning → Modeling → DAX → Visualization → Analysis**
+
+Each dashboard page has a distinct analytical role, allowing the user to move from the **overall Steam landscape**, to **game-level performance**, and finally to **genre and tag-level insights**.
