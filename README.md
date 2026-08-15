@@ -262,19 +262,42 @@ Each dashboard page therefore has a distinct role rather than repeating the same
 
 ![Steam Overview](images/steam-overview.png)
 
+The overview page provides a high-level view of the Steam games dataset, including releases over time, genre distribution, reviews, pricing, and game popularity.
+
 ### Game Analysis
 
 ![Game Analysis](images/game-analysis.png)
+
+The game analysis page focuses on individual game performance, player engagement, pricing, playtime, Peak CCU, recommendations, and free vs paid games.
 
 ### Genres / Tags Analysis
 
 ![Genres / Tags Analysis](images/genres-tags-analysis.png)
 
+The genres and tags page explores genre-level performance, pricing patterns, Peak CCU, and the most common game tags.
+
+---
+
+# 🧩 Data Preparation & Modeling
+
+The project also includes the data preparation and modeling stages used to build the final dashboard.
+
+### Cleaned Data
+
+![Cleaned Data](images/cleaned-data.png)
+
+The cleaned data represents the prepared dataset after the required data cleaning and transformation steps in Power Query.
+
 ### Data Model
 
 ![Data Model](images/data-model.png)
 
----
+The Power BI data model shows how the different tables are structured and related to support the dashboard's analysis and DAX measures.
+
+These two stages form the foundation of the final dashboard:
+
+**Cleaned Data → Data Model → DAX Measures → Interactive Dashboards**
+
 
 ## 🎯 Final Outcome
 
