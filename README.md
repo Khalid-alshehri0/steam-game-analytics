@@ -258,3 +258,16 @@ The project demonstrates the complete process of turning raw data into a usable 
 **Cleaning → Modeling → DAX → Visualization → Analysis**
 
 Each dashboard page has a distinct analytical role, allowing the user to move from the **overall Steam landscape**, to **game-level performance**, and finally to **genre and tag-level insights**.
+
+---
+
+## 👤 Author
+
+**Khalid Al-Shehri**
+
+Data Analytics & Business Intelligence
+
+[LinkedIn](https://www.linkedin.com/in/khalid-alshehri-864558356/)
+
+---
+
