@@ -29,7 +29,7 @@ This page provides the high-level picture of the dataset, including:
 
 The purpose of this page is to give users a quick understanding of the dataset before moving into deeper analysis.
 
-![Steam Overview](images/steam-overview.png)
+![Steam Overview](images/steam-overview.jpg)
 
 ---
 
@@ -58,7 +58,7 @@ The page also includes filters for:
 
 This page moves from the overall dataset into understanding **differences in popularity, pricing, and player engagement between games**.
 
-![Game Analysis](images/game-analysis.png)
+![Game Analysis](images/game-analysis.jpg)
 
 ---
 
@@ -81,7 +81,8 @@ It explores:
 
 The purpose is to identify patterns across genres and tags and understand how different categories of games are represented and engaged with on Steam.
 
-![Genres / Tags Analysis](images/genres-tags-analysis.png)
+![Genres / Tags Analysis](images/genres-tags-analysis.jpg)
+
 
 ---
 
@@ -135,7 +136,7 @@ Key preparation work included:
 * Preparing genre relationships
 * Creating structures suitable for Power BI analysis
 
-![Cleaned Data](images/cleaned-data.png)
+![Cleaned Data](images/Cleaned-Data%20-Table.png)
 
 The cleaned data represents the prepared dataset used as the foundation for the analytical model.
 
